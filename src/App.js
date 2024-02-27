@@ -2,9 +2,9 @@ import Navbar from './components/Navbar';
 import CartContainer from './components/CartContainer';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { calculateTotals, getCartItems } from './features/cart/cartSlice';
+import { calculateTotals, getCartItems } from './features/cart/cartAction';
 import { useEffect } from 'react';
-import Modal from './components/Modal';
+import Shopping from './components/Shopping';
 function App() {
   const { cartItems, isLoading } = useSelector((store) => store.cart);
   const { isOpen } = useSelector((store) => store.modal);
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <main>
-      {isOpen && <Modal />}
+      {isOpen && <Shopping />}
       <Navbar />
       <CartContainer />
     </main>
